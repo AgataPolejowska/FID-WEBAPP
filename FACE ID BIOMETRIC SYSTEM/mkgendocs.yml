@@ -1,0 +1,30 @@
+sources_dir: docs
+templates_dir: docs/templates
+
+pages:
+  - page: "routes.md"
+    source: "website/routes.py"
+    functions:
+      - register
+      - verify
+      - identify
+      - show_requirements
+      - autoregister
+  - page: "utils.md"
+    source: "website/utils.py"
+    functions:
+      - perform_complex_preprocessing
+      - align_face
+      - enhance_image_contrast
+      - enhance_image_sharpness
+      - resize_img
+      - prepare_img
+      - get_key_points
+      - check_biometric_vector
+      - is_match
+      - get_biometrics_vector
+      - generate_face_mesh
+      - allowed_file
+      - check_valid_emotion
+      - detect_faces
+      - deepface_analyze

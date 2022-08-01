@@ -1,0 +1,46 @@
+body 
+{
+    background-color: black;
+    color: white;
+}
+
+a 
+{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover
+{
+    color:rgb(255, 255, 255);
+    letter-spacing: 15px;
+}
+
+.navbar-custom
+{
+    background-color: black;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.custom-main-card
+{
+    background-color: black;
+    color: white;
+}
+
+.custom-main-card:hover
+{
+    background-color: rgba(58, 61, 63, 0.877);
+    border-width: 2px!important;
+    border-style: double!important;
+    margin:5px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 0px 14px 10px rgba(255,255,255,0.33); 
+    box-shadow: 0px 10px 13px -7px #000000, 0px 0px 14px 10px rgba(255,255,255,0.33);
+}
+
+.header-text-custom
+{
+    letter-spacing: 10px;
+    
+}

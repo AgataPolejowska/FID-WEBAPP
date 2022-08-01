@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        {% block style %}
+        {% endblock %}
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
+        <title>FACE ID BIOMETRIC SYSTEM</title>
+    </head>
+    <body>
+        {% block body %}
+        <div class="row text-center m-4 p-4 header-text-custom">
+            <a href="{{ url_for('index')}}"><h4>FACE ID BIOMETRIC SYSTEM</h4></a>
+        </div>
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-6"><h4>REGISTRATION</h4></div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ url_for('show_requirements')}}" target="_blank"><button class="btn btn-outline-light rounded-0">PHOTO REQUIREMENTS</button></a>
+                    </div>
+                </div>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <span class="text-white"><hr></span>
+                <div class="row pb-2 mb-3 mx-1">
+                    <p class="text-white px-0">Enter the nickname: </p>
+                    {{ form.nickname(class="form-control rounded-0") }}
+                </div>
+                <span class="text-white"><hr></span>
+                <div class="row my-1">
+                    <div class="col-md-6">
+                        <p class="text-white">Upload an image with one face: </p>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input id="file" name="file" type="file" multiple="false" class="form-control rounded-0">
+                </div>
+                <div class="row px-3 py-4">
+                    {{ form.register(class="btn btn-dark btn-outline-light rounded-0 px-5 mb-3") }}
+                </div>
+                <div class="row p-2">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} custom-alert rounded-0 p-2">
+                                    <small>{{ message }}</small>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <span class="text-white"><hr></span>
+            </form>
+        </div>
+        {% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>
+
